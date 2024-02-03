@@ -8,10 +8,9 @@ import (
 	"github.com/abhilash26/gohyper/internal/view"
 )
 
-var counter int
-
 func CounterAdd(w http.ResponseWriter, r *http.Request) {
-	counter++
+  counter, _ := model.GetCounter(storage.DB)
+  counter++;
 	model.UpdateCounterValue(storage.DB, counter)
 	templates := []string{
 		"component/counter",
@@ -20,7 +19,8 @@ func CounterAdd(w http.ResponseWriter, r *http.Request) {
 }
 
 func CounterSubtract(w http.ResponseWriter, r *http.Request) {
-	counter--
+  counter, _ := model.GetCounter(storage.DB)
+  counter--;
 	model.UpdateCounterValue(storage.DB, counter)
 	templates := []string{
 		"component/counter",
