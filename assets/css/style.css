@@ -37,6 +37,7 @@ button {
   border: 0;
   border-radius: var(--radius-xs);
   box-shadow: var(--shadow-xs);
+  cursor: pointer;
 }
 
 button:hover {
