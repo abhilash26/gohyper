@@ -1,0 +1,7 @@
+tmp/
+build/
+vendor/
+node_modules/
+*.env
+*.db
+*.gitconfig
