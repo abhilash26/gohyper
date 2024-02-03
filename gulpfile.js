@@ -33,7 +33,7 @@ gulp.task('js', () => {
 gulp.task('img', () => {
   return gulp.src(paths.img)
     .pipe(cache('img'))
-    .pipe(dest('./public/img'));
+    .pipe(gulp.dest('./public/img'));
 });
 
 // Watch task
