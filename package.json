@@ -2,14 +2,17 @@
   "name": "gohyper",
   "version": "1.0.0",
   "description": "A boilerplate for golang, HTMX and sqlite project.",
-  "scripts": {},
+  "scripts": {
+    "build": "esbuild ./assets/js/main.js --minify --bundle --outfile=./public/dist/main.js",
+    "dev": "esbuild ./assets/js/main.js --minify --bundle --outfile=./public/dist/main.js --watch=forever"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "htmx.org": "^1.9.10"
+  },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-cached": "^1.1.1",
-    "gulp-cssnano": "^2.1.3",
-    "gulp-uglify": "^3.0.2"
+    "esbuild": "^0.20.0"
   }
 }

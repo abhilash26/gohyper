@@ -7,13 +7,13 @@ default: run
 run:
 	echo "Running Pollen.."
 	@pollen
-	echo "Running Gulp.."
-	@gulp &
+	echo "Running NPM.."
+	@npm run dev &
 	echo "Running Go.."
 	@air
 
 build:
-	@pollen && gulp build && go build -o gohyper cmd/main.go
+	@pollen && npm run build && go build -o gohyper cmd/main.go
 
 clean:
 	@rm -rf tmp/
