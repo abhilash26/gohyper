@@ -1,7 +1,7 @@
 tmp/
 build/
 vendor/
-public/build/
+public/dist/
 node_modules/
 *.env
 *.db
