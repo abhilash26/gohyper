@@ -1,8 +1,6 @@
 package model
 
 import (
-	"fmt"
-
 	"github.com/jmoiron/sqlx"
 )
 
@@ -28,7 +26,6 @@ func GetCounter(db *sqlx.DB) (int, error) {
 	if err != nil {
 		return 0, err
 	}
-	fmt.Printf("Counter: %d", counter.Value)
 	return counter.Value, nil
 }
 
