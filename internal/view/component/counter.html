@@ -1,14 +1,13 @@
 {{- define "counter" -}}
 <div id="counter">
   <button class="counter-subtract" hx-get="/counter-subtract" 
-    hx-trigger="click" hx-target="#counter" hx-swap="outerHTML">
+    hx-trigger="click" hx-target="#counter-value" hx-swap="innerHTML">
     <img src="/static/img/arrow-down.svg" alt="arrow-down">
   </button>
-  <span class="counter-value">{{ or . "0" }}</span>
+  <span id="counter-value">{{ or . "0" }}</span>
   <button class="counter-add" hx-get="/counter-add" 
-    hx-trigger="click" hx-target="#counter" hx-swap="outerHTML">
+    hx-trigger="click" hx-target="#counter-value" hx-swap="innerHTML">
     <img src="/static/img/arrow-up.svg" alt="arrow-up">
   </button>
 </div>
 {{ end }}
-{{- block "counter" . -}}{{ end }}

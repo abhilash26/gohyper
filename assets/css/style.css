@@ -44,7 +44,7 @@ button:hover {
   background: var(--color-secondary);
 }
 
-.counter-value {
+#counter-value {
   font-weight: 600;
   font-size: var(--scale-fluid-4);
   padding: 0 var(--size-4);
