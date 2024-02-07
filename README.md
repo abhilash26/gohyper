@@ -1,5 +1,7 @@
 # Gohyper - A (Go + HTMX) fullstack web app boilerplate
 
+![image](https://github.com/abhilash26/gohyper/assets/28080925/3bba8ecc-297f-4fc1-875a-2ae44ec05d81)
+
 Gohyper is a fullstack web application boilerplate that embodies the principles of minimalism, enhanced developer experience, improved end-user experience, streamlined devops, code maintainability, adherence to better coding standards, and optimal code performance. It provides a solid foundation for building web applications using a carefully curated set of technologies.
 
 ## Technologies Used
