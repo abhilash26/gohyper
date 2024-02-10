@@ -5,17 +5,21 @@ import (
 	"log"
 	"net/http"
 	"strings"
+
+	"github.com/abhilash26/gohyper/internal/option"
 )
 
 func RenderTemplate(w http.ResponseWriter, templatePaths []string, templateName string, data interface{}) {
+	viewPath := option.GetStringEnv("VIEW_PATH", "./internal/view/")
+	viewExtension := option.GetStringEnv("VIEW_EXTENSION", ".tmpl")
 	// Append ".html" to the template name if it doesn't have it already.
-	if !strings.HasSuffix(templateName, ".html") {
-		templateName += ".html"
+	if !strings.HasSuffix(templateName, viewExtension) {
+		templateName += viewExtension
 	}
 
 	// Add the prefix to each template path.
 	for i, path := range templatePaths {
-		templatePaths[i] = "./internal/view/" + path + ".html"
+		templatePaths[i] = viewPath + path + viewExtension
 	}
 
 	// Parse the templates.
