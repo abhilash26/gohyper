@@ -6,7 +6,7 @@ import (
 
 	"github.com/abhilash26/gohyper/internal/model"
 	"github.com/abhilash26/gohyper/internal/storage"
-	"github.com/abhilash26/gohyper/internal/view"
+	tmpl "github.com/abhilash26/gohyper/internal/template"
 )
 
 type PageData struct {
@@ -29,5 +29,5 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		"component/counter",
 		"page/index",
 	}
-	view.RenderTemplate(w, templates, "index", data)
+	tmpl.RenderTemplate(w, templates, "index", data)
 }
