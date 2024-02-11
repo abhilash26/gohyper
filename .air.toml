@@ -4,10 +4,10 @@ tmp_dir = "tmp"
 
 [build]
   args_bin = []
-  bin = "./tmp/gohyper"
-  cmd = "mkdir -p ./tmp && go mod tidy && go build -o ./tmp/gohyper ./cmd"
+  bin = "./tmp/app"
+  cmd = "mkdir -p ./tmp && go mod tidy && go build -o ./tmp/app ./cmd"
   delay = 1000
-  exclude_dir = ["assets", "tmp", "vendor", "testdata", "public"]
+  exclude_dir = ["assets", "tmp", "vendor", "testdata", "public", "view", "node_modules", "build"]
   exclude_file = []
   exclude_regex = ["_test.go"]
   exclude_unchanged = false
