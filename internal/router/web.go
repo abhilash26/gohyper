@@ -10,9 +10,10 @@ import (
 func SetupWebRoutes() *chi.Mux {
 	router := chi.NewRouter()
 	router.Use(cmiddleware.Logger)
-  /* If using nginx or apache, disable below middleware and pass static resources directly through them */
+
+	/* If using nginx or apache, disable below middleware and
+	   pass static resources directly through them */
 	router.Use(middleware.FileServer("/static", "public"))
-	router.Use(middleware.GzipCompression)
 
 	// Application Routes here
 	router.Get("/", handler.IndexHandler)
