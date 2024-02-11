@@ -21,7 +21,9 @@ build:
 	@mkdir -p "cmd/build"
 	@cp -r public cmd/build/
 	@cp -r view cmd/build/
-	@cp .env.example cmd/build/.env
+	@cp .env cmd/build/.env
+	@echo "Copying database.."
+	@cp database.db cmd/build/database.db
 	@echo "Building Go app.."
 	@go build -o cmd/build/app cmd/main.go
 
