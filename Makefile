@@ -1,5 +1,10 @@
 # Makefile
 
+APP_NAME="gohyper"
+BUILD_DIR="cmd/${APP_NAME}/"
+TEMP_DIR="tmp/"
+DB_NAME="database.db"
+
 .PHONY: run build clean
 
 default: run
@@ -18,17 +23,17 @@ build:
 	@echo "Building pnpm tasks.."
 	@pnpm run build
 	@echo "Copying directories.."
-	@mkdir -p "cmd/build"
-	@cp -r public cmd/build/
-	@cp -r view cmd/build/
-	@cp .env cmd/build/.env
+	@mkdir -p "cmd/"
+	@cp -r public "$BUILD_DIR"
+	@cp -r view "${BUILD_DIR}"
+	@cp .env "${BUILD_DIR}.env"
 	@echo "Copying database.."
-	@cp database.db cmd/build/database.db
+	@cp "${DB_NAME}" "${BUILD_DIR}${DB_NAME}"
 	@echo "Building Go app.."
-	@go build -o cmd/build/app cmd/main.go
+	@go build -o "${BUILD_DIR}app" cmd/main.go
 
 clean:
-	@echo "Cleaning tmp/ directory.."
-	@rm -rf tmp/
+	@echo "Cleaning ${TEMP_DIR} directory.."
+	@rm -rf "$TEMP_DIR"
 	@echo "Cleaning building tasks.."
-	@rm -rf cmd/build/
+	@rm -rf "$BUILD_DIR"
