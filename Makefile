@@ -23,8 +23,8 @@ build:
 	@echo "Building pnpm tasks.."
 	@pnpm run build
 	@echo "Copying directories.."
-	@mkdir -p "cmd/"
-	@cp -r public "$BUILD_DIR"
+	@mkdir -p "${BUILD_DIR}"
+	@cp -r public "${BUILD_DIR}"
 	@cp -r view "${BUILD_DIR}"
 	@cp .env "${BUILD_DIR}.env"
 	@echo "Copying database.."
@@ -34,6 +34,6 @@ build:
 
 clean:
 	@echo "Cleaning ${TEMP_DIR} directory.."
-	@rm -rf "$TEMP_DIR"
+	@rm -rf "${TEMP_DIR}"
 	@echo "Cleaning building tasks.."
-	@rm -rf "$BUILD_DIR"
+	@rm -rf "${BUILD_DIR}"
