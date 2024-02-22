@@ -53,10 +53,17 @@ Gohyper is a fullstack web application boilerplate that embodies the principles 
 
 ## Getting Started
 
-1. Clone the repository:
+1. Clone the repository and cd into directory
    ```bash
-   git clone https://github.com/abhilash26/gohyper.git
-   cd gohyper
-   npm install
-   go mod tidy
-   make
+   git clone https://github.com/abhilash26/gohyper.git && cd gohyper
+   ```
+
+2. Initialize the project
+    ```bash
+    make init
+    ```
+
+2. Run the project:
+    ```bash
+    make run
+    ```

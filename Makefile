@@ -5,14 +5,24 @@ BUILD_DIR="cmd/${APP_NAME}/"
 TEMP_DIR="tmp/"
 DB_NAME="database.db"
 
-.PHONY: run build clean
+.PHONY: init run build clean
 
 default: run
 
-run:
-	@echo "Running Pollen.."
+init:
+	@echo "Building Pollen.."
 	@pollen
-	@echo "Running NPM.."
+	@echo "Installing pnpm dependencies.."
+  @pnpm install
+	@echo "Copying env files"
+	@cp env.example .env
+	@echo "Refresh go packages.."
+	@go mod tidy
+
+run:
+	@echo "Building Pollen.."
+	@pollen
+	@echo "Running pnpm.."
 	@pnpm run dev &
 	@echo "Running Go.."
 	@air
