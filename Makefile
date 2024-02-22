@@ -13,7 +13,7 @@ init:
 	@echo "Building Pollen.."
 	@pollen
 	@echo "Installing pnpm dependencies.."
-  @pnpm install
+	@pnpm install
 	@echo "Copying env files"
 	@cp env.example .env
 	@echo "Refresh go packages.."
