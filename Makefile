@@ -18,6 +18,7 @@ init:
 	@cp .env.example .env
 	@echo "Refresh go packages.."
 	@go mod tidy
+	@echo "Initializtion complete. Please run make run to run the project."
 
 run:
 	@echo "Building Pollen.."
