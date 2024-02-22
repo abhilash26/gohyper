@@ -15,7 +15,7 @@ init:
 	@echo "Installing pnpm dependencies.."
 	@pnpm install
 	@echo "Copying env files"
-	@cp env.example .env
+	@cp .env.example .env
 	@echo "Refresh go packages.."
 	@go mod tidy
 
