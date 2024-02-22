@@ -10,7 +10,7 @@ import (
 )
 
 func RenderTemplate(w http.ResponseWriter, templatePaths []string, templateName string, data interface{}) {
-	viewPath := option.GetStringEnv("VIEW_PATH", "./internal/view/")
+	viewPath := option.GetStringEnv("VIEW_PATH", "./view/")
 	viewExtension := option.GetStringEnv("VIEW_EXTENSION", ".tmpl")
 	// Append ".html" to the template name if it doesn't have it already.
 	if !strings.HasSuffix(templateName, viewExtension) {
